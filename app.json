@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/pay/pay",
+    "pages/map/map"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微信语音讲解器",
+    "navigationBarTextStyle":"black"
+  },
+  
+  "networkTimeout": {
+      "request": 10000,
+      "downloadFile": 10000
+    },
+
+    "debug":true    
+}

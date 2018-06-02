@@ -1,0 +1,110 @@
+<!--index.wxml-->
+<map id="map"  scale="{{scale}}" bindcontroltap="controltap" markers="{{markers}}" polyline="{{polyline}}" bindtap='tap'  bindmarkertap="markertap" 
+latitude="{{latitude}}"
+longitude ="{{longitude}}"
+controls="{{controls}}" show-location bindregionchange="regionchange" style="width: 100%; height: {{view.Height}}px">
+  <cover-view class='playVideo {{aniStyle?"slideup":"slidedown"}}'  style='top:{{playPo}}'>
+      <cover-view class='circle' bindtap='audioBtn'>
+        <cover-image src="{{circleBackground}}" style='width:50px;height:50px;border-radius:50%;' />
+         <cover-image src='{{audioImage}}' class='musicBtn'/> 
+      </cover-view>
+      <cover-view class='sightTitle'>{{sightName}}</cover-view>
+      <cover-image src='../../images/skip.png' class="skipBtn {{skipBtnFlag?'onShow':'onHide'}}" bindtap='skipSeoPlay'></cover-image>
+      <cover-image src='{{roomImage}}' class="roomMap {{roomMapFlag?'onShow':'onHide'}}" bindtap='roomMap' 
+      data-title="{{innerMapId}}"></cover-image>
+  </cover-view>
+  <cover-view class='moveLocation' bindtap="moveToLocation">
+       <cover-image src='{{position}}' ></cover-image>
+  </cover-view>
+  <cover-view class='scan' bindtap="scan">
+       <cover-image src='{{scanImage}}' ></cover-image>
+  </cover-view>
+  <cover-view class='auto' bindtap="auto">
+       <cover-image src='{{autoImage}}' ></cover-image>
+  </cover-view>
+  <audio  src="" id="myAudio" ></audio>
+  <cover-view class="viewTitle {{showViewScan?'':'onHide'}}" style='bottom:{{viewPosition}}'  bindtap='swithSight' >共有 {{sights}} 个景点<cover-image src='{{down}}' class='arrow'></cover-image></cover-view>
+   <cover-view class="viewTitle {{scanListFlag?'onShow':'onHide'}}" style='bottom:{{viewPosition}};color:#000000;'  bindtap='swithToSight' >附近的景点<cover-image src='{{down}}' class='arrow'></cover-image></cover-view>
+<cover-view class="innerMap {{innerMapView?'onShow1':'onHide1'}}" style="bottom:{{innerMapPosition}}">
+    <cover-image src='{{innerMapUrl}}'></cover-image> 
+</cover-view> 
+
+<cover-image src='{{popupImage}}'  class="popupImage {{popupFlag?'onShow':'onHide'}}"> </cover-image>
+
+
+<cover-image src='{{gpsImage}}' class="gpsImage {{gpsFlag?'onShow':'onHide'}}"></cover-image>
+
+<cover-image src='{{toptipsImage}}' class="toptipsImage {{toptipsFlag?'onShow':'onHide'}}"></cover-image>
+
+
+</map> 
+<view class="listenContent {{showView?'':'onHide'}}">
+  <view class="section__title"></view>
+  <scroll-view scroll-y style="height:222px;"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+       <view class="scroll-view-item sight {{currentId===item.play_title?'clickSel':'removeSel'}}"
+        wx:for='{{listData}}' wx:key id="title{{index}}" 
+       item='{{index}}' 
+       data-typeid='{{item.play_title}}'>
+            <view bindtap='musicPlayBtn'>
+              <image src='{{item.image_url}}' class='sightImage' 
+              data-title='{{index}}' data-room='{{item.isroom}}'
+              ></image>
+              <text class='sightName' 
+              data-title='{{index}}'
+              data-room='{{item.isroom}}'
+              >{{item.play_title}}</text>
+              <image src="{{audioPlayImage}}" class='musicPlayBtn' 
+              data-title='{{index}}'
+              data-room='{{item.isroom}}'
+              ></image> 
+            </view>
+            <block wx:if="{{!item.isroom}}">
+              <image src='{{router}}' data-location='{{item.lon_lat}}' class='mu' bindtap='goTo'></image> 
+            </block>
+            <view wx:for='{{playedFlag}}' wx:key wx:for-item='i'>
+                <text class="scanfg {{item.play_title === i  ?'onShow':'onHide'}}" >{{scan_flag}}</text> 
+            </view>
+            
+              <!-- <view class="mufg {{currentId===item.play_title?'onShow':'onHide'}}" >{{onFlag}}</view>     -->
+      </view>   
+  </scroll-view>
+</view>
+
+ <view class="scanList {{scanListFlag?'onShow':'onHide'}}">
+  <!-- <image src='../../images/close.png' class='scanClose'></image> -->
+  <scroll-view scroll-y style="height:200px;" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+       <view class="scroll-view-item sight_t {{currentId===item.play_title?'clickSel':'removeSel'}}"
+        wx:for='{{scanMenuList}}' wx:key id="title{{index}}" 
+       item='{{index}}' 
+       data-typeid='{{item.play_title}}'>
+            <view bindtap='musicPlayBtnScan'>
+              <image src='{{item.soundimage_url}}' class='sightImage' data-title='{{item.play_title}}' ></image>
+              <text class='sightName' data-title='{{item.play_title}}'>{{item.play_title}}</text>
+              <image src="{{audioPlayImage}}" class='musicPlayBtn' 
+              data-title='{{item.play_title}}' data-isroom='{{item.innerMap_url}}'></image> 
+            </view>
+            <block wx:if="{{!item.isroom}}">
+              <image src='{{router}}' data-location='{{item.lon_lat}}'   class='mu' bindtap='goTo'></image>
+            </block>    
+
+            <view wx:for='{{playedFlag}}' wx:key wx:for-item='i'>
+                <text class="scanfg {{item.play_title === i  ?'onShow':'onHide'}}" >{{scan_flag}}</text> 
+            </view>
+            
+           
+
+      </view>   
+  </scroll-view>
+</view>   
+
+
+
+
+
+
+
+
+
+
+
+

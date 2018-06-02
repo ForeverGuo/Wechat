@@ -1,0 +1,250 @@
+/**index.wxss**/
+#map{
+  position: relative;
+  width: 100%;
+  height:100%;
+}
+.playVideo{
+  width:100%;
+  height:68px;
+  position:fixed;
+  background-color:#fff;
+  text-align:center;
+  display: none;
+ 
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius:25px;
+    margin:0 auto;
+    position: relative;
+}
+.musicBtn{
+  position: absolute;
+  top:17px;
+  left:15px;
+  width: 20px;
+  height:20px;
+}
+.musicPlayBtn{
+  position:absolute;
+  top:20px;
+  left:17px;
+  width:20px;
+  height:20px;
+}
+.skipBtn{
+  position:absolute;
+  top:21px;
+  right:10px;
+  width:100px;
+  height:30px;
+}
+.roomMap{
+  position:absolute;
+  top:24px;
+  left:22px;
+  width:100px;
+  height:30px;
+}
+
+.sightTitle{
+  font-size:14px;
+  padding-bottom:0px;
+  color:#b31c27;
+}
+@keyframes slidedown {
+    from {
+        transform: translateY(0); 
+         bottom:0; 
+    }
+    to {
+         transform: translateY(100%);
+         bottom: -50px; 
+    }
+
+}
+.slidedown {
+    animation: slidedown 0.5s linear ;
+    bottom:-50px;
+    display: none; 
+}
+.slideup {
+    animation: slideup 0.5s linear;
+    bottom: 0;
+    display: block;
+    background: rgba(0, 0, 0,0.1); 
+}
+@keyframes slideup {
+    from {
+        transform: translateY(100%);
+        bottom: -50px; 
+    }
+    to {
+        transform: translateY(0);
+        bottom:0; 
+    } 
+}
+.moveLocation{
+  position: fixed;
+  left: 14px;
+  top:20px;
+  width:38px;height:38px;
+}
+.scan{
+  position: fixed;
+  left: 14px;
+  top:80px;
+  width:38px;
+  height:38px;
+}
+.auto{
+  position: fixed;
+  left: 14px;
+  top:139px;
+  width:38px;
+  height:38px;
+}
+.scanList{
+  width:100%;
+  height:200px;
+  background:#fff;
+  border-radius:10px;
+  position:fixed;
+  overflow-y:scroll;
+  bottom:0;
+  display: block;
+}
+.popupImage{
+  position:fixed;
+  left:14px;
+  top:195px;
+  width:68px;
+  height:91px;
+}
+.gpsImage{
+  position:fixed;
+  right:14px;
+  top:20px;
+  width:68px;
+  height:91px;
+}
+.toptipsImage{
+  position:fixed;
+  right:100px;
+  top:0;
+  width:200px;
+  height:33px;
+}
+.scanClose{
+  width:30px;
+  height:30px;
+  position:fixed;
+  right:0;
+}
+.content{
+  width: 100%;
+  position: fixed;
+  bottom:0;
+  border-top:1px solid #ddd;
+}
+.viewTitle{
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  font-size:12px;
+  line-height:30px;
+  position:fixed;
+  background: #ffffff;
+  color:#b31c27;
+  z-index:999;
+}
+.arrow{
+  width:18px;
+  height:16px;
+  display:inline-block;
+  position:absolute;
+  top:9px;
+  margin-left:5px;
+}
+.listenContent{
+  height:222px;
+  width: 100%;
+  overflow-y: scroll;
+  background: #ffffff;
+  display:block;
+  z-index:999;
+}
+.sight{
+  height:60px;
+  line-height:60px;
+  display: flex;
+  border-bottom:1px solid #ddd;
+  position: relative;
+}
+.sight_t{
+  height:60px;
+  line-height:60px;
+  display: flex;
+  border-bottom:1px solid #ddd;
+  position: relative;
+}
+.sightImage{
+  width: 40px;
+  height:40px;
+  border-radius:50%;
+  margin:10px 7px;
+}
+.sightName{
+  margin-left:10px;
+  font-size: 14px;
+  line-height:60px;
+  color: #000000;
+  padding-bottom:10px;
+  width:232px;
+  position: absolute;
+}
+.mu{
+  width:56px;
+  height:28px;
+  position:absolute;
+  right:12px;
+  top:18px;
+  font-size:14px;
+  color:red;
+}
+.scanfg{
+  width:56px;
+  height:28px;
+  position:absolute;
+  right:87px;
+  top:2px;
+  font-size:14px;
+  color:red;
+}
+.clickSel {  
+  background:#cfe2f3; 
+}  
+.removeSel {  
+  background:#fff; 
+} 
+.onShow{
+  display: block;
+}
+.onHide{
+  display: none;
+}
+.innerMap{
+  width:207px;
+  height:130px;
+  position:fixed;
+  right:0;
+}
+.onShow1{
+  opacity:1
+}
+.onHide1{
+  opacity:0
+}

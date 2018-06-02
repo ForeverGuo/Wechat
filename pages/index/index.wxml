@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class='wmhg'>
+    <image src='{{wmhg}}'></image>
+</view>

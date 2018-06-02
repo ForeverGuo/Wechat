@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<image class="logo" src="../pic/1.jpg"/>
+<image class="first" src="../pic/2.jpg"/>
+
+<view class="center"><text class="text1">欢迎使用伪满皇宫博物院官方微信语音导览</text></view>
+
+<view class="center"><image class="second" src="../pic/3.png"/></view>
+
+<image class="third" src="../pic/4.png" bindtap='wmhg_voice'/>
+<image class="fourth" src="../pic/9.png"/>
+<view class="box" bindtap='handPay'>
+  <image class="fifth" src="../pic/5.png"/>
+  <image class="sixth" src="{{hand_pay}}"/>
+</view>
+<view style='clear:both;'></view>
+<view class='box'  bindtap='scanPay'>
+  <image class="scan" src="../pic/scancode.png"/>
+  <image class="sel" src="{{scan_pay}}"/>
+</view>
+<view style='clear:both;'></view>
+<view class="text2"><text >点击支付后即可享受微信语音讲解</text>
+</view>
+<view class="bottom">
+<image class="seventh" src="../pic/7.jpg"/>
+<image class="eighth" src="../pic/8.png" bindtap='payMoney'/>
+</view>
+<audio  src="{{src}}" id="myAudio" ></audio>
